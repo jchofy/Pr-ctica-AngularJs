@@ -1,0 +1,35 @@
+<div class="ms-5">
+
+    <div class="mt-3">
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h1 class="mt-4">Libros</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 col-sm-8">Buscar:<input ng-model="titulo" type="text"> </div>
+        <div class="col-2 col-sm-4">Ordenar: <select ng-model="autor" type="month">
+            <option value="titulo">Título</option>
+            <option value="editorial">Editorial</option>
+            </select>
+
+        </div>
+    </div>
+    <div>
+        <div class="row mt-5" ng-repeat="libro in libros | filter:titulo | orderBy:autor">
+            <div class="col col-xl-3 col-sm-12">
+                <a href="#{{libro.id}}"><img src="{{libro.img}}" alt=""></a>
+            </div>
+            <div class="col col-xl-8 col-sm-12 ms-4 mt-3">
+                <a href="#{{libro.id}}">
+                    <h3>Titulo: {{libro.titulo}}</h3>
+                </a>
+                <h4>{{libro.editorial}}</h4>
+                <p>{{libro.descripcion}}</p>
+            </div>
+        </div>
+    </div>
+</div>
